@@ -2,7 +2,6 @@
 
 [![GoDoc](https://godoc.org/github.com/milosgajdos83/go-estimate-examples?status.svg)](https://godoc.org/github.com/milosgajdos83/go-estimate-examples)
 [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Travis CI](https://travis-ci.org/milosgajdos83/go-estimate-examples.svg?branch=master)](https://travis-ci.org/milosgajdos83/go-estimate-examples)
 
 This repo contains examples of usage for [go-estimate](https://github.com/milosgajdos83/go-estimate)
 
