@@ -8,12 +8,12 @@ import (
 	"math"
 	"math/rand"
 
-	filter "github.com/milosgajdos83/go-estimate"
-	"github.com/milosgajdos83/go-estimate/estimate"
-	"github.com/milosgajdos83/go-estimate/kalman/ekf"
-	"github.com/milosgajdos83/go-estimate/noise"
-	"github.com/milosgajdos83/go-estimate/sim"
-	"github.com/milosgajdos83/matrix"
+	filter "github.com/milosgajdos/go-estimate"
+	"github.com/milosgajdos/go-estimate/estimate"
+	"github.com/milosgajdos/go-estimate/kalman/ekf"
+	"github.com/milosgajdos/go-estimate/noise"
+	"github.com/milosgajdos/go-estimate/sim"
+	"github.com/milosgajdos/matrix"
 	"gocv.io/x/gocv"
 	"gonum.org/v1/gonum/mat"
 )

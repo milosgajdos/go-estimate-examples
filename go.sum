@@ -7,10 +7,11 @@ github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 h1:DACJavvAHhabrF0
 github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0/go.mod h1:E/TSTwGwJL78qG/PmXZO1EjYhfJinVAhrmmHX6Z8B9k=
 github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5 h1:PJr+ZMXIecYc1Ey2zucXdR73SMBtgjPgwa31099IMv0=
 github.com/jung-kurt/gofpdf v1.0.3-0.20190309125859-24315acbbda5/go.mod h1:7Id9E/uU8ce6rXgefFLlgrJj/GYY22cpxn+r32jIOes=
-github.com/milosgajdos83/go-estimate v0.0.0-20191003120349-8e538c2587d2 h1:Lzrwm71l2pGoVffxGQNbVYWkKrSGZro1xwb6LJadxaI=
-github.com/milosgajdos83/go-estimate v0.0.0-20191003120349-8e538c2587d2/go.mod h1:2FtF4useatbM0X+OQSK8W7+vaiKDpsdJX/oTlmmYL1o=
-github.com/milosgajdos83/matrix v0.0.0-20190506003350-38bc2a7ca9e3 h1:wAh3RhMmx9oHCxpQNdxuV3uT9GK2SfmyoogEOairK1c=
-github.com/milosgajdos83/matrix v0.0.0-20190506003350-38bc2a7ca9e3/go.mod h1:uPaTD+beOJY89niSp2gS8PadBW9Zgu1nqzrBWToLYsQ=
+github.com/milosgajdos/go-estimate v0.0.0-20200225195609-9b3ac7df4a55 h1:r9sO0xYriwc/geKOOe+uKKtP31JjYgxsZldrZO0gaXQ=
+github.com/milosgajdos/go-estimate v0.0.0-20200225195609-9b3ac7df4a55/go.mod h1:Q/7hHNCDOKHWR180q5/AXpXkVgo+png/9G5QO0LOu/c=
+github.com/milosgajdos/matrix v0.0.0-20200225195132-b569a2d38acc/go.mod h1:syV6SoL9H0uoFn4wFjU7PFz2PKf3O8C/kbAxoOl1DSk=
+github.com/milosgajdos/matrix v0.0.0-20200225195508-d837cc378586 h1:kgyihTOfApJDXIU1iIAvsI9feDyOdu4dUuSBYdRIGmA=
+github.com/milosgajdos/matrix v0.0.0-20200225195508-d837cc378586/go.mod h1:syV6SoL9H0uoFn4wFjU7PFz2PKf3O8C/kbAxoOl1DSk=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=

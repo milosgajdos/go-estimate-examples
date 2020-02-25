@@ -1,9 +1,9 @@
 # go-estimate-examples
 
-[![GoDoc](https://godoc.org/github.com/milosgajdos83/go-estimate-examples?status.svg)](https://godoc.org/github.com/milosgajdos83/go-estimate-examples)
+[![GoDoc](https://godoc.org/github.com/milosgajdos/go-estimate-examples?status.svg)](https://godoc.org/github.com/milosgajdos/go-estimate-examples)
 [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This repo contains examples of usage for [go-estimate](https://github.com/milosgajdos83/go-estimate)
+This repo contains examples of usage for [go-estimate](https://github.com/milosgajdos/go-estimate)
 
 First, you need to install [GoCV](https://gocv.io) as instructed [here](https://github.com/hybridgroup/gocv/#how-to-install).
 
@@ -14,7 +14,7 @@ $ make examples
 
 Get the repo:
 ```shell
-go get github.com/milosgajdos83/go-estimate-examples
+go get github.com/milosgajdos/go-estimate-examples
 ```
 
 Build examples:
