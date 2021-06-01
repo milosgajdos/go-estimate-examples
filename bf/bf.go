@@ -5,6 +5,7 @@ import (
 	"log"
 
 	filter "github.com/milosgajdos/go-estimate"
+	"github.com/milosgajdos/go-estimate-examples/fallingball"
 	"github.com/milosgajdos/go-estimate/estimate"
 	"github.com/milosgajdos/go-estimate/noise"
 	"github.com/milosgajdos/go-estimate/particle/bf"
@@ -16,16 +17,8 @@ import (
 )
 
 func main() {
-	A := mat.NewDense(2, 2, []float64{1.0, 1.0, 0.0, 1.0})
-	B := mat.NewDense(2, 1, []float64{0.5, 1.0})
-	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
-	D := mat.NewDense(1, 1, []float64{0.0})
-
 	// ball is the model of the system we will simulate
-	ball, err := sim.NewBaseModel(A, B, C, D)
-	if err != nil {
-		log.Fatalf("Failed to create ball: %v", err)
-	}
+	ball := fallingball.InputModel(1.0)
 
 	// initial system state and control input
 	var x mat.Vector = mat.NewVecDense(2, []float64{100.0, 0.0})
