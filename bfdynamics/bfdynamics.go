@@ -14,6 +14,7 @@ import (
 	"time"
 
 	filter "github.com/milosgajdos/go-estimate"
+	"github.com/milosgajdos/go-estimate-examples/fallingball"
 	"github.com/milosgajdos/go-estimate/estimate"
 	"github.com/milosgajdos/go-estimate/noise"
 	"github.com/milosgajdos/go-estimate/particle/bf"
@@ -67,17 +68,8 @@ func main() {
 	runtime.LockOSThread()
 	flag.Parse()
 
-	// system dynamics matrices
-	A := mat.NewDense(2, 2, []float64{1.0, 1.0, 0.0, 1.0})
-	B := mat.NewDense(2, 1, []float64{0.5, 1.0})
-	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
-	D := mat.NewDense(1, 1, []float64{0.0})
-
 	// ball is the model of the system we will simulate
-	ball, err := sim.NewBaseModel(A, B, C, D)
-	if err != nil {
-		log.Fatalf("Failed to create ball model: %v", err)
-	}
+	ball := fallingball.InputModel(1.0)
 
 	// Y coordinate of the initial system state
 	startY := 400.0
@@ -130,7 +122,7 @@ func main() {
 	// initial filter estimate: our initial guess about position of the ball
 	// Note: Our estimate will be off the model a bit
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	var est filter.Estimate
 	est, err = estimate.NewBase(initX)

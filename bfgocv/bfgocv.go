@@ -77,8 +77,8 @@ func main() {
 	A := mat.NewDense(2, 2, []float64{1.0, 1.0, 0.0, 1.0})
 	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
 
-	// ship is a model of the system we will simulate
-	ship, err := sim.NewBaseModel(A, nil, C, nil)
+	// ship is the model of the system we will simulate
+	ship, err := sim.NewBaseModel(A, nil, C, nil, nil, 0.1)
 	if err != nil {
 		log.Fatalf("Failed to create ship model: %v", err)
 	}
@@ -126,7 +126,7 @@ func main() {
 	// initial filter estimate: our initial guess about position of the ship
 	//  Note: Our estimate will be off the model a bit
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	var est filter.Estimate
 	est, err = estimate.NewBase(initX)

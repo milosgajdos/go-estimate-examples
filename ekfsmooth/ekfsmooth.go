@@ -38,7 +38,7 @@ func main() {
 	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
 
 	// dot is the model of the system we will simulate
-	dot, err := sim.NewBaseModel(A, nil, C, nil)
+	dot, err := sim.NewBaseModel(A, nil, C, nil, nil, 0.1)
 	if err != nil {
 		log.Fatalf("Failed to created dot model: %v", err)
 	}
@@ -70,7 +70,7 @@ func main() {
 
 	// filter initial estimate
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	fmt.Println("Initial KF State: \n", matrix.Format(initX))
 

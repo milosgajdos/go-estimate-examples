@@ -5,6 +5,7 @@ import (
 	"log"
 
 	filter "github.com/milosgajdos/go-estimate"
+	"github.com/milosgajdos/go-estimate-examples/fallingball"
 	"github.com/milosgajdos/go-estimate/estimate"
 	"github.com/milosgajdos/go-estimate/kalman/kf"
 	"github.com/milosgajdos/go-estimate/noise"
@@ -15,42 +16,44 @@ import (
 )
 
 func main() {
-	A := mat.NewDense(2, 2, []float64{1.0, 1.0, 0.0, 1.0})
-	B := mat.NewDense(2, 1, []float64{0.5, 1.0})
-	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
-	D := mat.NewDense(1, 1, []float64{0.0})
 
+	// A := mat.NewDense(2, 2, []float64{1.0, 1.0, 0.0, 1.0})
+	// B := mat.NewDense(2, 1, []float64{0.5, 1.0})
+	// C := mat.NewDense(1, 2, []float64{1.0, 0.0})
+	// D := mat.NewDense(1, 1, []float64{0.0})
+
+	// every second the system is advanced
+	dt := 1.0
 	// ball is the model of the system we will simulate
-	ball, err := sim.NewBaseModel(A, B, C, D)
-	if err != nil {
-		log.Fatalf("Failed to created ball: %v", err)
-	}
-
+	// E matrix is not implemented in go-estimate as of yet so is passed as nil
+	ball := fallingball.InputModel(dt)
+	// dimensions of system. nx is state vector length. ny is output vector length. nu is input vector length.
+	var nx, nu, ny, _ = ball.SystemDims()
 	// number of simulation steps
 	steps := 50
-
+	fmt.Println(nx, ny, nu)
 	// modelOut measurements i.e. true model output state
-	modelOut := mat.NewDense(steps, 2, nil)
+	modelOut := mat.NewDense(steps, nx, nil)
 
 	// output measurement i.e. output + error
-	measOut := mat.NewDense(steps, 2, nil)
+	measOut := mat.NewDense(steps, nx, nil)
 
 	// measurement noise used to simulate real system
-	measCov := mat.NewSymDense(1, []float64{100.0})
+	measCov := mat.NewSymDense(ny, []float64{100.0})
 	measNoise, err := noise.NewGaussian([]float64{0.0}, measCov)
 	if err != nil {
 		log.Fatalf("Failed to create measurement noise: %v", err)
 	}
 
 	// output corrected/updated by filter
-	filterOut := mat.NewDense(steps, 2, nil)
+	filterOut := mat.NewDense(steps, nx, nil)
 
 	// initial system state and control input
-	var x mat.Vector = mat.NewVecDense(2, []float64{100.0, 0.0})
-	var u mat.Vector = mat.NewVecDense(1, []float64{-1.0})
+	var x mat.Vector = mat.NewVecDense(nx, []float64{100.0, 0.0})
+	var u mat.Vector = mat.NewVecDense(nu, []float64{-1.0})
 
 	// initial state covariance
-	stateCov := mat.NewSymDense(2, []float64{0.25, 0, 0, 0.25})
+	stateCov := mat.NewSymDense(nx, []float64{0.25, 0, 0, 0.25})
 	stateNoise, err := noise.NewGaussian([]float64{0.0, 0.0}, stateCov)
 	if err != nil {
 		log.Fatalf("Failed to create state noise: %v", err)
@@ -64,7 +67,7 @@ func main() {
 
 	// filter initial estimate
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.SetVec(0, initX.AtVec(0)+stateNoise.Sample().At(0, 0))
 	var est filter.Estimate
 	est, err = estimate.NewBase(initX)
