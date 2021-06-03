@@ -24,13 +24,15 @@ func GetDotPos(center image.Point, r, angle float64) image.Point {
 	p := image.Pt(center.X, center.Y)
 	x := math.Cos(angle) * r
 	y := (-math.Sin(angle)) * r
-
+	c := gocv.NewMat()
+	_ = c
 	return p.Add(image.Pt(int(x), int(y)))
 }
 
 func DrawMarker(img *gocv.Mat, center image.Point, c color.RGBA, d int) {
 	gocv.Line(img, image.Pt(center.X-d, center.Y-d), image.Pt(center.X+d, center.Y+d), c, 3)
 	gocv.Line(img, image.Pt(center.X+d, center.Y-d), image.Pt(center.X-d, center.Y+d), c, 3)
+
 }
 
 func main() {
@@ -38,7 +40,7 @@ func main() {
 	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
 
 	// dot is the model of the system we will simulate
-	dot, err := sim.NewBaseModel(A, nil, C, nil)
+	dot, err := sim.NewBaseModel(A, nil, C, nil, nil, 0.1)
 	if err != nil {
 		log.Fatalf("Failed to created dot model: %v", err)
 	}
@@ -70,7 +72,7 @@ func main() {
 
 	// filter initial estimate
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	fmt.Println("Initial KF State: \n", matrix.Format(initX))
 

@@ -35,6 +35,8 @@ github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORN
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0 h1:45sCR5RtlFHMR4UwH9sdQ5TC8v0qDQCHnXt+kaKSTVE=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
+github.com/milosgajdos/go-estimate v0.1.1 h1:m/rWYYXqzG8cwhBVXNFXgPrVdlpatQF7yiThLGHY7Tk=
+github.com/milosgajdos/go-estimate v0.1.1/go.mod h1:pclD5Xs0TOXSfb2rSFyLf33zd10nKRkTt4fTxytCHGM=
 github.com/milosgajdos/matrix v0.0.1 h1:zDV91rki6Y6W1yMiSoCpPIKYLoUf0DyEvCA+SloKo1Q=
 github.com/milosgajdos/matrix v0.0.1/go.mod h1:nwsbBAQ4Z39KwGp0YbTK6gnuM9bFyVmwGJKizDeI7BY=
 github.com/phpdave11/gofpdf v1.4.2 h1:KPKiIbfwbvC/wOncwhrpRdXVj2CZTCFlw4wnoyjtHfQ=
@@ -49,8 +51,6 @@ github.com/rs/xid v1.2.1/go.mod h1:+uKXf+4Djp6Md1KODXJxgGQPKngRmWyn10oCKFzNHOQ=
 github.com/rs/zerolog v1.21.0/go.mod h1:ZPhntP/xmq1nnND05hhpAh2QMhSsA4UN3MGZ6O2J3hM=
 github.com/ruudk/golang-pdf417 v0.0.0-20181029194003-1af4ab5afa58/go.mod h1:6lfFZQK844Gfx8o5WFuvpxWRwnSoipWe/p622j1v06w=
 github.com/sirupsen/logrus v1.8.1/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
-github.com/soypat/go-estimate v0.3.0 h1:LwNMp2jjMvJ2+tm19omU8WLRB++Wj6zb2k02HXi7N+0=
-github.com/soypat/go-estimate v0.3.0/go.mod h1:pclD5Xs0TOXSfb2rSFyLf33zd10nKRkTt4fTxytCHGM=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=

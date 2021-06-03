@@ -44,7 +44,7 @@ func FreeModel(dt float64) *sim.BaseModel {
 // represent the falling ball physical system
 //
 //  g is local gravity field expressed as a scalar
-//  ξ is viscous drag coefficient expereienced by the ball due to being in a fluid
+//  ξ is viscous drag coefficient experienced by the ball due to being in a fluid
 //
 // y is the result of said equations which are written in function of x as follows:
 //  y(t) = x'(t) = f(t, x)
