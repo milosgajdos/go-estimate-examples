@@ -20,9 +20,10 @@ func main() {
 	B := mat.NewDense(2, 1, []float64{0.5, 1.0})
 	C := mat.NewDense(1, 2, []float64{1.0, 0.0})
 	D := mat.NewDense(1, 1, []float64{0.0})
+	E := mat.NewDense(2, 1, []float64{1.0, 0})
 
 	// ball is the model of the system we will simulate
-	ball, err := sim.NewBaseModel(A, B, C, D)
+	ball, err := sim.NewBaseModel(A, B, C, D, E)
 	if err != nil {
 		log.Fatalf("Failed to create ball: %v", err)
 	}

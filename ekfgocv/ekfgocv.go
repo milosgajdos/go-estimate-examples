@@ -68,7 +68,7 @@ func main() {
 
 	// filter initial estimate
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	fmt.Println("Initial KF State: \n", matrix.Format(initX))
 

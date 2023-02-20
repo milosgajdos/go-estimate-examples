@@ -126,7 +126,7 @@ func main() {
 	// initial filter estimate: our initial guess about position of the ship
 	//  Note: Our estimate will be off the model a bit
 	initX := &mat.VecDense{}
-	initX.CloneVec(x)
+	initX.CloneFromVec(x)
 	initX.AddVec(initX, stateNoise.Sample())
 	var est filter.Estimate
 	est, err = estimate.NewBase(initX)
